@@ -1,9 +1,22 @@
 package exceptions;
 
+import rocketDomain.RateDomainModel;
+
 public class RateException extends Exception {
 
-	//	TODO - RocketBLL RateException - RateDomainModel should be an attribute of RateException
-	//	* Add RateRomainModel as an attribute
-	//	* Create a constructor, passing in RateDomainModel
-	//	* Create a getter (no setter, set value only in Constructor)
+	private RateDomainModel JudgeRate;
+	
+	public RateException(RateDomainModel JudgeRate) {
+		super();
+		this.JudgeRate = JudgeRate;
+	}
+	
+	public RateException() {
+		System.out.println("Sorry, we cant accept you with your credit.");
+	}
+	
+	public RateDomainModel getRateModel() {
+		return JudgeRate;
+	}
+
 }
